@@ -14,123 +14,59 @@ namespace Lekcja5
         {
 
             {
-                // Kurs 051, Lekcja 5, Konwersja typów, rzutowanie, komentarze
-
-                // RZUTOWANIE ZMIENNYCH
+                // Kurs 052, Lekcja 5, WCZYTYWANIE DANYCH Z KONSOLI
 
                 /*
-                 * Rzutowanie zmiennych to proces konwersji wartości jednego typu danych na inny, 
-                 * kompatybilny typ danych. W programowaniu, rzutowanie jest używane w celu zmiany
-                 * typu danych zmiennej, na przykład zamiany liczby całkowitej na liczbę zmiennoprzecinkową. 
-                 */
+                 * Console.ReadKey(); - jest wczytywaniem danych z konsoli
+                 * Console.ReadLine(); jest drugą metodą wczytywania z konsoli
+                 * 
+                 * Wpisujemy całą linię do Console.ReadLine(); i enterem wysyłamy do kompa
+                 * Jednak się nie zapisała, gdyż nie mamy takiego przypisania               
+                 * Console.RL jest zmienną typu string
+                */
 
-                // W poniższym  int MaxValue to: +- 2 147 483 647 short MaxValue 32 767
-
-                // int i = int.MaxValue;
-                // short s = short.MaxValue;
-
-               // i = s;   
-               
-                        // do dużej butli i - wlewamy małą s
-                        // do  i inta przypisujemy wartość jaka siedzi w s shorcie
-                        // 2 147 483 647 zmieści 32 767 więc działanie dobre 
-                        // inaczej; int dużo większy od shorta, więc go zmieści
-
-               // Console.WriteLine(i);  
-                                       // wyświetli się 32 767
-                                       // pod zmienną typu int przechowujemy więc
-                                       // max wartość short, bo więcej się nie da
-                                       // w praktyce: Do wielkiej bańki możemy nalać tylko tyle wody
-                                       // ile jest w małej bańce... Działanie jest wtedy prawidłowe,
-                                       // nie potrzebujemy wykonywać rzutowania (zamiany zmiennych)
-
-                // s = i;  
-                // do małej butli s chcemy wlać dużą i
-                // jeśli tak to tłumaczymy znika odczucie,
-                // że jest to zapisywane jakby odwrotnie
-
-                // gdybyśmy chcieli zrobić takie działanie, wyświetli nam się
-                // "Nie można niejawnie przekonwertować typu int na short.
-                // Isnieje konwersja jawna (czy nie brakuje rzutu?)
-                // Inaczej: program nie dopuszcza konwersji niejawnej, jeżeli istnieje
-                // możliwość utraty jakichś informacji
-                // W PRAKTYCE: jeśli byśmy chcieli przelać wodę z dużej bańki do małej,
-                // pewna woda by się przelała (utracilibyśmy dane, informacje)
-
-                // rzut, konwersja jawna i niejawna
-
-                /*  Słowa: "BRAKUJE RZUTU"
-                 *  Brak rzutu w programowaniu oznacza, że nie można automatycznie 
-                 *  przekonwertować jednego typu danych na inny. Wyobraża to 
-                 *  próbę zmieszczenia kwadratu w okrągu; 
-                 *  nieprawidłowe typy danych mogą spowodować błąd 
-                 *  lub niepożądane zachowanie programu. 
-                 *  Na przykład, jeśli spróbujesz przypisać wartość zmiennej typu int 
-                 *  do zmiennej typu string BEZ RZUTOWANIA, może wystąpić błąd, 
-                 *  ponieważ int i string to różne typy danych. 
-                 *  
-                 *  KONWERSJA JAWNA I NIEJAWNA:
-                 *  
-                 *  KONWERSJA JAWNA to proces, w którym możemy bezpiecznie 
-                 *  przekonwertować typy danych z mniejszych na typy większe. 
-                 *  (zawartość mniejszej butli wlana do większej)
-                 *  Na przykład, przekonwertowanie liczby całkowitej na liczbę 
-                 *  zmiennoprzecinkową jest konwersją jawną, ponieważ nie tracimy żadnych danych.
-                 *  
-                 *  KONWERSJA NIEJAWNA, ma miejsce, gdy możemy przekonwertować 
-                 *  typy danych większe na typy mniejsze. 
-                 *  Na przykład, przekonwertowanie liczby zmiennoprzecinkowej na liczby całkowite 
-                 *  jest konwersją niejawna, ponieważ możemy stracić część informacji po przecinku.
-                 *  (wlewamy z większej butli do mniejszej, będąc świadomym utraty części wody)
-                 *  
-                 *  KLUCZ DO RZUTOWANIA POPRZEZ KONWERSJĘ NIEJAWNĄ
-                 */
-
-                // s = (short)i;
-
-                // Console.WriteLine(i);
-
-                // wyświetli się 2 147 483 647 - bo zrobiliśmy 
-                // rzutowanie jawne, czyli jakby będac świadomym utraty danych
-                // do zmiennej typu short zostaje przypisana zmienna typu int
-                // ale wyświetlona liczba dotyczy zmiennej i
-
-
-                // Co innego gdybyśmy chcieli wyświetlić przez cw nie i, ale s
+                // PIERWSZY SPOSÓB WCZYTYWANIA Z KONSOLI
                 
-                // Console.WriteLine(s); 
-                
-                     // to wyświetli się się -1 bo pętla się zapętli
-                     // w "s" i tak nie pomieszczą się inty
-                     // czyli rzutowanie zostanie wykonane,
-                     // ale i tak pętla się zapętli, dlatego otrzymamy "kosmiczne" -1
-                     // bo nie była w stanie pomieścić tak dużej liczby intów                
-                
-                // INNY PRZYKŁAD:
+                // string s = Console.ReadLine();
+                // Console.WriteLine(s);
 
-                int i = int.MaxValue;
-                double d = 5.1;   // double - zmiennoprzecinkowa, zmienna przechowuje ułamki
+                // na konsoli nic się nie wyświetli. ale jesli wpiszemy "ala ma kota"
+                // i przyenterujemy - PONOWNIE - wyświetli się "ala ma kota"
+                // Żeby nie było - na tą chwilę jeszcze nie wiem z czym to się je -
+                // Ale pewnie o tym się jeszcze przekonamy. Wytrwałości! 
 
-                i = (int)d; // tutaj rzutujemy zmienną d na typu int
+                // DRUGI SPOSÓB WCZYTYWANIA Z KONSOLI
 
-                Console.WriteLine( i );
+                if (Console.ReadKey().Key == ConsoleKey.D1)
+                    Console.WriteLine("PRAWDA");
 
-                // CIEKAWOSTKA: wyświetli się 5, a nie 5.1 bo int nie przechowuje 
-                // wartości ułamkowych
-                // Czyli przerzutowaliśmy zmienną d na inta, 
-                // ale to wiązało się ze zgubieniem jednej dziesiątej piątki
-                // W incie pozostają tylko całości
 
-                // PAMIĘTAJ:
-                // Rzutowanie musi być JAWNE, musimy to zadeklarować
-                // i wtedy możemy stracić część informacji. 
-                //    Możemy stracić ale nie musimy. To zależy, bo gdyby zmienna typu
-                // double była równa 5 to przechowamy całą informację
-                 
-                // 16.00 Wczytywanie danych z konsoli
+                // Sprawdzamy jaki został wciśnięty klawisz?
+                // D1 jest to /jedynka (1)/ na klawiaturze numerycznej.
+                // Tutaj skorzystamy z instrukcji warunkowej IF
+                // Chodzi o to, że jeżeli naciśniemy ten klawisz "jedynki"
+                // wyświetli się nam "PRAWDA". Jeśli nie, nie wyświetli się nic.
+                // Bo przecież ta instrukcja na tym polega, żeby sprawdzić czy 
+                // coś jest prawdą czy nie
+                // Jeśli byśmy mieli napisane:
+                // if (Console.ReadKey() == ConsoleKey.D1) to mielibyśmy info,
+                // że nie da się porównać ConsoleReadKey z Console.Key
+                // dopiero gdy właczyliśmy pole Key, program mógłbyć uruchomiony
+                // jak powyżej we wzorze.
+
+                // REASUMUJĄC; jeśli teraz wpiszesz 1 na klawiaturze, wypisz "PRAWDA"
+                // na konsoli. W przeciwnym wypadku  - nie rób nic.
+                // Na tym polega sens dzaiłania ifa
+
+                // klikając 1 - wyświetli się 1PRAWDA
+                // klikając każdy inny przycisk, będzie tylko to wyświetlone, 
+                // co kliknęliśmy
+                // Bez enetera się wyświetli, lub nie. Enter spowoduje, że zamknie się konsolapv
 
 
                 Console.ReadKey();
+
+
 
 }
 
